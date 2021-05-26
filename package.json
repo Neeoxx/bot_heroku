@@ -1,0 +1,33 @@
+{
+  "name": "rem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GamearooCodes/Rem.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GamearooCodes/Rem/issues"
+  },
+  "homepage": "https://github.com/GamearooCodes/Rem#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "ffmpeg": "0.0.4",
+    "fs": "0.0.1-security",
+    "math.js": "^1.1.46",
+    "mathjs": "^9.3.2",
+    "moment": "^2.29.1",
+    "ms": "^2.1.3",
+    "node-fetch": "^2.6.1",
+    "opusscript": "0.0.8",
+    "ws": "^7.4.5",
+    "ytdl-core": "^4.5.0"
+  }
+}
