@@ -1,5 +1,5 @@
 {
-  "name": "rem",
+  "name": "match",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GamearooCodes/Rem/issues"
+    
   },
-  "homepage": "https://github.com/GamearooCodes/Rem#readme",
+
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
