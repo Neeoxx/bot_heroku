@@ -1,5 +1,5 @@
 module.exports = {
-    name: "bite",
+    name: "mord",
     description: "mord le/la",
     async execute(message, args, Discord){
         images = [
@@ -14,12 +14,12 @@ module.exports = {
 
         personBiten = message.mentions.users.first()
             if(personBiten){
-            let biteEmbed = new Discord.MessageEmbed()
+            let mordEmbed = new Discord.MessageEmbed()
             .setTitle(` tu mord ${personBiten.username} :drool: `)
             .setImage(images[Math. floor(Math. random()*images. length)])
             .setTimestamp()
             
-            message.channel.send(biteEmbed);
+            message.channel.send(mordEmbed);
         }
 
     }

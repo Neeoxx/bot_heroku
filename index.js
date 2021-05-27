@@ -128,7 +128,7 @@ if (message.content.startsWith('b!ban')) {
 	.addFields(
 		{ name: 'Préfix :', value: "le préfix du serveur est : `b!` et c'est grâce à cela que tu pourra faire les commandes du serveur ! "},
 		//{ name: '\u200B', value: '\u200B' }, saut de ligne //
-		{ name: 'commande fun (gif/musique/avatar etc )', value: '`b!ping` = permet de faire un ping-pong avec le bot / `b!avatar` = pour voir ton joli logo en grand ! / `b!play` = permet de mettre ta musique préféré dans un channel (exemple : `b!play + lien de ta musique`) / `b!gif` = permet de poster un gif de ton choix ! (exemple : `b!gif cat`) / `b!kiss` = pour embrasser celui/Celle que tu aime tant / `b!hug` = permet de calîner ton être le plus cher / `b!baka` = permet de insulter ton pote imbécile ! / `b!bite`= permet de mordre ton/ta partenaire / `b!handholding` = permet de tenir la main a une personne qui te tient à coeur ', inline: false },
+		{ name: 'commande fun (gif/musique/avatar etc )', value: '`b!ping` = permet de faire un ping-pong avec le bot / `b!avatar` = pour voir ton joli logo en grand ! / `b!play` = permet de mettre ta musique préféré dans un channel (exemple : `b!play + lien de ta musique`) / `b!gif` = permet de poster un gif de ton choix ! (exemple : `b!gif cat`) / `b!kiss` = pour embrasser celui/Celle que tu aime tant / `b!hug` = permet de calîner ton être le plus cher / `b!baka` = permet de insulter ton pote imbécile ! / `b!mord`= permet de mordre ton/ta partenaire / `b!handholding` = permet de tenir la main a une personne qui te tient à coeur ', inline: false },
 	)
 	.addField('commandes des modos et des admins :', '`b!ban` = je dois vraiment détaillé cette commande ? / `b!kick` = permet de mettre un high-kick au gens comme toi qui ne respecte pas la loi', true)
 	.setTimestamp()
@@ -187,8 +187,8 @@ Client.once('ready', () => {
             Client.commands.get('baka').execute(message, args, Discord);
         }else if(command === 'handholding'){
             Client.commands.get('handholding').execute(message, args, Discord);
-        }else if(command === 'bite'){
-          Client.commands.get('bite').execute(message, args, Discord);
+        }else if(command === 'mord'){
+          Client.commands.get('mord').execute(message, args, Discord);
         }else if(command === 'cry'){
           Client.commands.get('cry').execute(message, args, Discord);
         }else if(command === 'smile'){
