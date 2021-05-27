@@ -39,29 +39,35 @@ const replies = [
     //****MUSIQUE****//
 
   //b!play
-  if (message.content.startsWith('b!play')) {
-    if (message.member.voice.channel) {
-      let args = message.content.split(" ");
 
-      if (!args[1]) {
-        message.reply("lien de la vidéo non ou mal mentionné.");
-      } else {
-        const streamOptions = { seek: 0, volume: 0.5 };
-        var voiceChannel = message.member.voice.channel;
-        voiceChannel.join().then(connection => {
-            const stream = ytdl(args[1], { filter: "audioonly" });
-            const dispatcher = connection.play(stream);
-          message.channel.send("lecture de la musique")
-            dispatcher.on("end", end => {
-              voiceChannel.leave();
-            });
-          })
-          .catch(err => {
-          console.log(err)
-          });
-      }
+  //b!play
+if (message.content.startsWith(prefix + "play")) {
+  if (message.member.voice.channel) {
+    let args = message.content.split(" ");
+
+    if (!args[1]) {
+      message.reply("lien de la vidéo non ou mal mentionné.");
     }
+    else {
+      const streamOptions = { seek: 0, volume: 0.5 };
+      var voiceChannel = message.member.voiceChannel;
+      voiceChannel.join().then(connection => {
+        const stream = ytdl(args[1], { filter: 'audioonly' });
+        const dispatcher = connection.playStream(stream, streamOptions);
+        dispatcher.on("end", end => {
+          voiceChannel.leave();
+        });
+      }).catch(err => {
+        message.reply("Erreur lors de la connection " + err);
+      });
+
+      dispatcher.on("error", err => {
+        console.log("erreur de dispatcher : " + err);
+      });
+    }
+
   }
+}
 
 
 
