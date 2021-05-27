@@ -12,10 +12,7 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    
-  },
-
+  "bugs": {},
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
@@ -28,6 +25,6 @@
     "node-fetch": "^2.6.1",
     "opusscript": "0.0.8",
     "ws": "^7.4.5",
-    "ytdl-core": "^4.5.0"
+    "ytdl-core": "^4.8.0"
   }
 }

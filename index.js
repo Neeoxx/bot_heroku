@@ -54,7 +54,7 @@ if (message.content.startsWith(prefix + "play")) {
       voiceChannel.join().then(connection => {
         const stream = ytdl(args[1], { filter: 'audioonly' });
         const dispatcher = connection.playStream(stream, streamOptions);
-        dispatcher.on("end", end => {
+        dispatcher.on("end", _end => {
           voiceChannel.leave();
         });
       }).catch(err => {
