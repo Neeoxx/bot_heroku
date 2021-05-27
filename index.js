@@ -6,7 +6,6 @@ const ytdl = require("ytdl-core");
 require('dotenv').config();
 const fetch = require("node-fetch");
 const queue = new Map();
-const search = require('youtube-search');
 
 
 const replies = [
