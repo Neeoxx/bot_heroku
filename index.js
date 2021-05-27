@@ -5,8 +5,6 @@ const prefix = 'b!';
 const ytdl = require("ytdl-core");
 require('dotenv').config();
 const fetch = require("node-fetch");
-
-
 const replies = [
 
     'je te kiff trooop !',
@@ -39,37 +37,31 @@ const replies = [
     }
 
     //****MUSIQUE****//
-  
-//b!play
-if (message.content.startsWith('b!play')) {
-  if (message.member.voice.channel) {
-    let args = message.content.split(" ");
 
-    if (!args[1]) {
-      message.reply("lien de la vidéo non ou mal mentionné.");
-    } else {
-      const streamOptions = { seek: 0, volume: 0.5 };
-      var voiceChannel = message.member.voice.channel;
-      voiceChannel.join().then(connection => {
-          const stream = ytdl(args[1], { filter: "audioonly" });
-          const dispatcher = connection.play(stream);
-        message.channel.send("lecture de la musique")
-          dispatcher.on("end", end => {
-            voiceChannel.leave();
+  //b!play
+  if (message.content.startsWith('b!play')) {
+    if (message.member.voice.channel) {
+      let args = message.content.split(" ");
+
+      if (!args[1]) {
+        message.reply("lien de la vidéo non ou mal mentionné.");
+      } else {
+        const streamOptions = { seek: 0, volume: 0.5 };
+        var voiceChannel = message.member.voice.channel;
+        voiceChannel.join().then(connection => {
+            const stream = ytdl(args[1], { filter: "audioonly" });
+            const dispatcher = connection.play(stream);
+          message.channel.send("lecture de la musique")
+            dispatcher.on("end", end => {
+              voiceChannel.leave();
+            });
+          })
+          .catch(err => {
+          console.log(err)
           });
-        })
-        .catch(err => {
-        console.log(err)
-        });
+      }
     }
   }
-}
-
-
-
-
-
-
 
 
 
