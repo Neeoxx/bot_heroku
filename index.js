@@ -42,19 +42,19 @@ const replies = [
     //****MUSIQUE****//
 
     const serverQueue = queue.get(message.guild.id);
-    if (commande === "b!play") {
+    if (command === "b!play") {
         execute(message, serverQueue, args);
         return;
     } 
-    if (commande === "b!skip") {
+    if (command === "b!skip") {
         skip(message, serverQueue, args);
         return;
     } 
-    if (commande === "b!stop") {
+    if (command === "b!stop") {
         stop(message, serverQueue, args);
         return;
     } 
-    if (commande === "b!pause") {
+    if (command === "b!pause") {
         pause(message, serverQueue, args);
         return;
     } 
