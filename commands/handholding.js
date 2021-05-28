@@ -14,7 +14,7 @@ module.exports = {
         personHand = message.mentions.users.first()
             if(personHand){
             let handEmbed = new Discord.MessageEmbed()
-            .setTitle(` tu tien la main de ${personHand.username} :handshake: `)
+            .setTitle(` tu tiens la main de ${personHand.username} :handshake: `)
             .setImage(images[Math. floor(Math. random()*images. length)])
             .setTimestamp()
             

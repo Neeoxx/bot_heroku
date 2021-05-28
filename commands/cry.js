@@ -17,7 +17,7 @@ module.exports = {
         personCry = message.mentions.users.first()
             if(personCry){
             let cryEmbed = new Discord.MessageEmbed()
-            .setTitle(` tu pleure sur ${personCry.username} :pensive: `)
+            .setTitle(` tu pleures sur ${personCry.username} :pensive: `)
             .setImage(images[Math. floor(Math. random()*images. length)])
             .setTimestamp()
             

@@ -20,7 +20,7 @@ module.exports = {
         personKissed = message.mentions.users.first()
             if(personKissed){
             let kissEmbed = new Discord.MessageEmbed()
-            .setTitle(`Tu embrasse ${personKissed.username} :kiss: `)
+            .setTitle(`Tu embrasses ${personKissed.username} :kiss: `)
             .setImage(images[Math. floor(Math. random()*images. length)])
             .setTimestamp()
             

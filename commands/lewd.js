@@ -16,7 +16,7 @@ module.exports = {
         personLewd = message.mentions.users.first()
             if(personLewd){
             let lewdEmbed = new Discord.MessageEmbed()
-            .setTitle(` tu essaye de chauffer ${personLewd.username} :smirk: :tongue: `)
+            .setTitle(` tu essayes de chauffer ${personLewd.username} :smirk: :tongue: `)
             .setImage(images[Math. floor(Math. random()*images. length)])
             .setTimestamp()
             

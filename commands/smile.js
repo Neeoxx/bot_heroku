@@ -17,7 +17,7 @@ module.exports = {
         personSmile = message.mentions.users.first()
             if(personSmile){
             let smileEmbed = new Discord.MessageEmbed()
-            .setTitle(` tu souri avec / grâce à ${personSmile.username} :relaxed: `)
+            .setTitle(` tu souris avec / grâce à ${personSmile.username} :relaxed: `)
             .setImage(images[Math. floor(Math. random()*images. length)])
             .setTimestamp()
             
