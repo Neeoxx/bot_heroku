@@ -41,55 +41,36 @@ const replies = [
 
   //b!play
 
-  //b!play
+Client.on("message", message => {
 if(message.content.startsWith(prefix + "play")){
   if(message.member.voice.channel){
-    let args = message.content.split(" ");
+    message.member.voice.channel.join().then(connection => {
+      let agrs = message.content.split("");
 
-    if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
-      message.reply("Lien de la vidéo non ou mal mentionné")
-    }
-    else{
-      if(list.length > 0){
-        list.push(args[1]);
-        message.reply("Vidéo ajouté à ta liste !");
-
-        message.member.voice.channel.join().then(connection => {
-          playMusic(connection);
-
-          connexion.on("disconnect", () =>{
-            list = [];
-          })
-        }).catch(err =>{
-          message.replay("Errur lors de la connection : "+ err );
-        })
+      if(!args[1]){
+        message.reply("Lien de la vidéo non ou mal mentionné");
+        connection.disconnect();
       }
-    }
+      else{
+        
+      let dispatcher = connection.play(ytdl(args[1], {quality: 'highestaudio'}));
 
-  }
-}
-
-function playMusic(connection){
-  let dispatcher = connection.play(ytdl(list[0], {quality: "highestaudio"}));
-
-  dispatcher.on("finish", () => {
-    list.shift();
-    dispatcher.destroy();
-
-    if(list.length > 0){
-      playMusic(connection);
-    }
-    else {
-      connection.disconnect();
-    }
-
-    dispatcher.on('error', err => {
-      console.log("erreur de dispatcher: " + err);
-      dispatcher.destroy();
-    
+      dispatcher.on("finish", () => {
+        dispatcher.destroy();
+        connection.disconnect();
+      })
+      }
     })
-  })
+  }
+  
+
+  dispatcher.on("error", err => {
+    console.log('erreur de dispatcher :' + err);
+  });
+
+
 }
+})
 
 
 
