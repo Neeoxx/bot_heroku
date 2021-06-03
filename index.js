@@ -5,7 +5,6 @@ const prefix = 'b!';
 const ytdl = require("ytdl-core");
 require('dotenv').config();
 const fetch = require("node-fetch");
-const { listenerCount } = require('events');
 const replies = [
 
     'je te kiff trooop !',
