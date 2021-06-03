@@ -5,6 +5,7 @@ const prefix = 'b!';
 const ytdl = require("ytdl-core");
 require('dotenv').config();
 const fetch = require("node-fetch");
+const { listenerCount } = require('events');
 const replies = [
 
     'je te kiff trooop !',
@@ -41,33 +42,55 @@ const replies = [
   //b!play
 
   //b!play
-if (message.content.startsWith(prefix + "play")) {
-  if (message.member.voice.channel) {
+if(message.content.startsWith(prefix + "play")){
+  if(message.member.voice.channel){
     let args = message.content.split(" ");
 
-    if (!args[1]) {
-      message.reply("lien de la vidéo non ou mal mentionné.");
+    if(args[1] == undefined || !args[1].startsWith("https://youtube.com/watch?v=")){
+      message.reply("Lien de la vidéo non ou mal mentionné")
     }
-    else {
-      const streamOptions = { seek: 0, volume: 0.5 };
-      var voiceChannel = message.member.voiceChannel;
-      voiceChannel.join().then(connection => {
-        const stream = ytdl(args[1], { filter: 'audioonly' });
-        const dispatcher = connection.playStream(stream, streamOptions);
-        dispatcher.on("end", _end => {
-          voiceChannel.leave();
-        });
-      }).catch(err => {
-        message.reply("Erreur lors de la connection " + err);
-      });
+    else{
+      if(list.length > 0){
+        list.push(args[1]);
+        message.reply("Vidéo ajouté à ta liste !");
 
-      dispatcher.on("error", err => {
-        console.log("erreur de dispatcher : " + err);
-      });
+        message.member.voice.channel.join().then(connection => {
+          playMusic(connection);
+
+          connexion.on("disconnect", () =>{
+            list = [];
+          })
+        }).catch(err =>{
+          message.replay("Errur lors de la connection : "+ err );
+        })
+      }
     }
 
   }
 }
+
+function playMusic(connection){
+  let dispatcher = connection.play(ytdl(list[0], {quality: "highestaudio"}));
+
+  dispatcher.on("finish", () => {
+    list.shift();
+    dispatcher.destroy();
+
+    if(list.length > 0){
+      playMusic(connection);
+    }
+    else {
+      connection.disconnect();
+    }
+
+    dispatcher.on('error', err => {
+      console.log("erreur de dispatcher: " + err);
+      dispatcher.destroy();
+    
+    })
+  })
+}
+
 
 
 
