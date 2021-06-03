@@ -46,7 +46,7 @@ if(message.content.startsWith(prefix + "play")){
   if(message.member.voice.channel){
     let args = message.content.split(" ");
 
-    if(args[1] == undefined || !args[1].startsWith("https://youtube.com/watch?v=")){
+    if(args[1] == undefined || !args[1].startsWith("https://www.youtube.com/watch?v=")){
       message.reply("Lien de la vidéo non ou mal mentionné")
     }
     else{
