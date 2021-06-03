@@ -62,13 +62,6 @@ if(message.content.startsWith(prefix + "play")){
       }
     })
   }
-  
-
-  dispatcher.on("error", err => {
-    console.log('erreur de dispatcher :' + err);
-  });
-
-
 }
 })
 
