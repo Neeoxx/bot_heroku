@@ -40,7 +40,6 @@ const replies = [
 
   //b!play
 
-Client.on("message", message => {
 if(message.content.startsWith(prefix + "play")){
   if(message.member.voice.channel){
     message.member.voice.channel.join().then(connection => {
@@ -62,7 +61,7 @@ if(message.content.startsWith(prefix + "play")){
     })
   }
 }
-})
+
 
 
 
