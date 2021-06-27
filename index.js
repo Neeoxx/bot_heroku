@@ -14,7 +14,21 @@ const replies = [
     "je t'aime tellement fort",
     "Ma raison de vivre c'est toi",
     "je t'aime + que 3x1000",
-    "tu me manque"
+    "tu me manque",
+    "tu est la personne la plus importante dans ma vie",
+    "merci d'être encore dans ma vie",
+    "je suis si heureux de t'avoir encore dans ma vie",
+    "merci d'être la pour moi",
+    "je t'aime",
+    "je veux finir ma vie avec toi",
+    " tu a pu m'aider quand j'étais au plus bas",
+    " je te remercirais jamais assez de pouvoir être à mes côtés ",
+    "tu est parfaite, ne change jamais",
+    "tes défauts font partie des qualités que j'aime chez toi",
+    "ta voix est tellement belle à entendre",
+    "ma vie sans toi aurait pas de sens, tu sais maintenant pourquoi j'ai besoin de toi pour pas me perdre",
+    "commande spécial, long texte : si ce texte c'est fait invoqué même avec tout les autres, sache que je prendrais toujours soins de toi quoi qu'il arrive, je sais pas si pour toi je suis un bon petit copain, mais ce qui est sur c'est que je ne te laisserais jamais tomber. Je veux ton bien, que tu réussis ta vie que sa soit avec moi ou sans moi, réussi la. je t'aime",
+
 
   ]
     Client.on("ready", () => {
