@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
-const ytdl = require("ytdl-core@latest");
+const ytdl = require("ytdl-core");
 require('dotenv').config();
 const fetch = require("node-fetch");
 const replies = [
