@@ -28,6 +28,7 @@ const replies = [
     "ta voix est tellement belle à entendre",
     "ma vie sans toi aurait pas de sens, tu sais maintenant pourquoi j'ai besoin de toi pour pas me perdre",
     "commande spécial, long texte : si ce texte c'est fait invoqué même avec tout les autres, sache que je prendrais toujours soins de toi quoi qu'il arrive, je sais pas si pour toi je suis un bon petit copain, mais ce qui est sur c'est que je ne te laisserais jamais tomber. Je veux ton bien, que tu réussis ta vie que sa soit avec moi ou sans moi, réussi la. je t'aime",
+    "j'ai peur de te perdre ", 
 
 
   ]
@@ -53,29 +54,6 @@ const replies = [
     //****MUSIQUE****//
 
   //b!play
-  if (message.content.startsWith('b!play')) {
-    if (message.member.voice.channel) {
-      let args = message.content.split(" ");
-
-      if (!args[1]) {
-        message.reply("lien de la vidéo non ou mal mentionné.");
-      } else {
-        const streamOptions = { seek: 0, volume: 0.5 };
-        var voiceChannel = message.member.voice.channel;
-        voiceChannel.join().then(connection => {
-            const stream = ytdl(args[1], { filter: "audioonly" });
-            const dispatcher = connection.play(stream);
-          message.channel.send("lecture de la musique")
-            dispatcher.on("end", end => {
-              voiceChannel.leave();
-            });
-          })
-          .catch(err => {
-          console.log(err)
-          });
-      }
-    }
-  }
 
 
 
