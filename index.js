@@ -105,8 +105,18 @@ if (message.content.startsWith('b!ban')) {
     }
   }
 
-
   //b!mute
+  if(message.content.startsWith('b!mute')){
+    let metion = message.mentions.members.first();
+
+    if(metion == undefined){
+      message.reply("membre non ou mal mentionné !");
+    }
+    else {
+      mention.roles.add("886709261869133874");
+      message.reply(`j'ai mute ${user.tag}`);
+    }
+  }
 
   const embed = new Discord.MessageEmbed()
 
