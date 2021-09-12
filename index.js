@@ -110,12 +110,12 @@ if (message.content.startsWith('b!ban')) {
     let mention = message.mentions.members.first();
 
     if(mention == undefined){
-      message.reply('membre non ou mal mentionné');
+      message.channel.send('membre non ou mal mentionné');
     }
 
   else {
     mention.roles.add("886699920587903037");
-    message.reply(mention.displayName + 'ton boug est mute !')
+    message.channel.send(mention.displayName + 'est mute !');
   }
 }
 
@@ -128,7 +128,7 @@ else if (message.content.startsWith('b!unmute')) {
 
 else {
   mention.roles.remove("886699920587903037");
-  message.channel.send(mention.displayName + 'ton boug est unmute !')
+  message.channel.send(mention.displayName + 'est unmute !');
 }
 }
 
