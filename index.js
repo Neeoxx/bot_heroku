@@ -58,7 +58,6 @@ const replies = [
 
 //****BAN ET KICK*****//
 //b!ban//
-  if(message.member.hasPermission("ADMINISTRATOR")){
 
 if (message.content.startsWith('b!ban')) {
     const user = message.mentions.users.first();
@@ -117,7 +116,7 @@ if (message.content.startsWith('b!ban')) {
 
   else {
     mention.roles.add("886699920587903037");
-    message.channel.send(mention.displayName + 'est mute !');
+    message.channel.send(`j'ai mute ${user.tag}`);
   }
 }
 
@@ -130,10 +129,9 @@ else if (message.content.startsWith('b!unmute')) {
 
 else {
   mention.roles.remove("886699920587903037");
-  message.channel.send(mention.displayName + 'est unmute !');
+  message.channel.send(`j'ai unmute ${user.tag}`);
 }
   }
-    }
 
   const embed = new Discord.MessageEmbed()
 
