@@ -118,14 +118,14 @@ if (message.content.startsWith('b!ban')) {
             message.reply(`j'ai mute ${user.tag}`);
           })
           .catch(err => {
-            message.reply('impossible de le bannir wsh');
+            message.reply('impossible de le mute');
             console.error(err);
           });
       } else {
         message.reply("il est même pas à l'interieur de ton serveur !");
       }
     } else {
-      message.reply("ta même pas mentionner celui que tu veux ban");
+      message.reply("ta même pas mentionner celui que tu veux mute");
     }
   }
 
