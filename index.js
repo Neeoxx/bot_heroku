@@ -119,6 +119,20 @@ if (message.content.startsWith('b!ban')) {
     }
   }
 
+  //b!unmute
+  if(message.content.startsWith('b!unmute')){
+    let mention = message.mentions.members.first();
+    const user = message.mentions.users.first();
+
+    if(mention == undefined){
+      message.reply("membre non ou mal mentionné !");
+    }
+    else {
+      mention.roles.remove("886709261869133874");
+      message.reply(`j'ai unmute ${user.tag}`);
+    }
+  }
+
   const embed = new Discord.MessageEmbed()
 
 	.setColor('#FF00FF')
