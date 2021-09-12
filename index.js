@@ -111,14 +111,13 @@ if (message.content.startsWith('b!ban')) {
     if (user) {
       const member = message.guild.member(user);
       if (member) {
-        member.mute({
-            reason: 'il/elle est tarpain méchant zeubi',
-          })
+        member
+          .mute('Optional reason that will display in the audit logs')
           .then(() => {
             message.reply(`j'ai mute ${user.tag}`);
           })
           .catch(err => {
-            message.reply('impossible de le mute');
+            message.reply('je peut pas mute le boug');
             console.error(err);
           });
       } else {
