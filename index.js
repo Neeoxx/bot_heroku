@@ -107,30 +107,6 @@ if (message.content.startsWith('b!ban')) {
 
 
   //b!mute
-  if (message.content.startsWith('b!mute')) {
-    let mention = message.mentions.members.first();
-
-    if(mention == undefined){
-      message.reply('membre non ou mal mentionné');
-    }
-
-  else {
-    mention.roles.add("886699920587903037");
-    message.reply(`j'ai mute ${user.tag}`);
-  }
-}
-
-else if (message.content.startsWith('b!unmute')) {
-
-  if(mention == undefined){
-    message.reply('membre non ou mal mentionné');
-  }
-
-else {
-  mention.roles.remove("886699920587903037");
-  message.reply(`j'ai unmute ${user.tag}`);
-}
-  }
 
   const embed = new Discord.MessageEmbed()
 
