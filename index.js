@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
-const ytdl = require("ytdl-core");
 require('dotenv').config();
 const fetch = require("node-fetch");
 const replies = [
@@ -102,6 +101,31 @@ if (message.content.startsWith('b!ban')) {
       }
     } else {
       message.reply("ta même pas mentionner celui que tu veux high-kick");
+    }
+  }
+
+
+  //b!mute
+  if (message.content.startsWith('b!mute')) {
+    const user = message.mentions.users.first();
+    if (user) {
+      const member = message.guild.member(user);
+      if (member) {
+        member.mute({
+            reason: 'il/elle est tarpain méchant zeubi',
+          })
+          .then(() => {
+            message.reply(`j'ai mute ${user.tag}`);
+          })
+          .catch(err => {
+            message.reply('impossible de le bannir wsh');
+            console.error(err);
+          });
+      } else {
+        message.reply("il est même pas à l'interieur de ton serveur !");
+      }
+    } else {
+      message.reply("ta même pas mentionner celui que tu veux ban");
     }
   }
 
