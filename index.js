@@ -107,27 +107,30 @@ if (message.content.startsWith('b!ban')) {
 
   //b!mute
   if (message.content.startsWith('b!mute')) {
-    const user = message.mentions.users.first();
-    if (user) {
-      const member = message.guild.member(user);
-      if (member) {
-        member
-          .mute('Optional reason that will display in the audit logs')
-          .then(() => {
-            message.reply(`j'ai mute ${user.tag}`);
-          })
-          .catch(err => {
-            message.reply('je peut pas mute le boug');
-            console.error(err);
-          });
-      } else {
-        message.reply("il est même pas à l'interieur de ton serveur !");
-      }
-    } else {
-      message.reply("ta même pas mentionner celui que tu veux mute");
+    let mention = message.mentions.members.first();
+
+    if(mention == undefined){
+      message.reply('membre non ou mal mentionné');
     }
+
+  else {
+    mention.roles.add("886699920587903037");
+    message.reply(mention.displayName + 'ton boug est mute !')
+  }
+}
+
+else if (message.content.startsWith('b!unmute')) {
+  let mention = message.mentions.members.first();
+
+  if(mention == undefined){
+    message.channel.send('membre non ou mal mentionné');
   }
 
+else {
+  mention.roles.remove("886699920587903037");
+  message.channel.send(mention.displayName + 'ton boug est unmute !')
+}
+}
 
   const embed = new Discord.MessageEmbed()
 
