@@ -58,6 +58,8 @@ const replies = [
 
 //****BAN ET KICK*****//
 //b!ban//
+  if(message.member.hasPermission("ADMINISTRATOR")){
+
 if (message.content.startsWith('b!ban')) {
     const user = message.mentions.users.first();
     if (user) {
@@ -130,7 +132,8 @@ else {
   mention.roles.remove("886699920587903037");
   message.channel.send(mention.displayName + 'est unmute !');
 }
-}
+  }
+    }
 
   const embed = new Discord.MessageEmbed()
 
