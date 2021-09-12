@@ -108,6 +108,7 @@ if (message.content.startsWith('b!ban')) {
   //b!mute
   if(message.content.startsWith('b!mute')){
     let mention = message.mentions.members.first();
+    const user = message.mentions.users.first();
 
     if(mention == undefined){
       message.reply("membre non ou mal mentionné !");
