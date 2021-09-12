@@ -58,14 +58,13 @@ const replies = [
 
 //****BAN ET KICK*****//
 //b!ban//
-
 if (message.content.startsWith('b!ban')) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
       if (member) {
         member.ban({
-            reason: 'il/elle est tarpain méchant zeubi',
+            reason: 'il/elle est tarpin méchant zeubi',
           })
           .then(() => {
             message.reply(`j'ai banni ${user.tag}`);
