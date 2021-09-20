@@ -27,7 +27,8 @@ const replies = [
     "ta voix est tellement belle à entendre",
     "ma vie sans toi aurait pas de sens, tu sais maintenant pourquoi j'ai besoin de toi pour pas me perdre",
     "commande spécial, long texte : si ce texte c'est fait invoqué même avec tout les autres, sache que je prendrais toujours soins de toi quoi qu'il arrive, je sais pas si pour toi je suis un bon petit copain, mais ce qui est sur c'est que je ne te laisserais jamais tomber. Je veux ton bien, que tu réussis ta vie que sa soit avec moi ou sans moi, réussi la. je t'aime",
-    "j'ai peur de te perdre ", 
+    "j'ai peur de te perdre ",
+    "des fois je me sens seul car tu n'est pas avec moi, mais il suffit de dire ton prénom dans ma tête pour retrouver le sourire", 
 
 
   ]
