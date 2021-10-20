@@ -51,6 +51,13 @@ const replies = [
       message.reply(message.author.displayAvatarURL());
     }
 
+
+    if (message.content == prefix + "nitro") {
+      message.channel.send("Tu ma demandé un Nitro ? le voici ! : https://discord.gift/WNE2jpXv3q3J9dMs");
+    }
+
+
+
     //****MUSIQUE****//
 
   //b!play
