@@ -51,9 +51,8 @@ const replies = [
       message.reply(message.author.displayAvatarURL());
     }
 
-    const nitro = 'https://discord.gift/WNE2jpXv3q3J9dMs';
     if (message.content == prefix + "nitro") {
-      message.channel.send(nitro);
+      message.reply('tu veux un nitro ? le voici ! : https://discord.gift/WNE2jpXv3q3J9dMs ');
     }
 
 
