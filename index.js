@@ -52,7 +52,7 @@ const replies = [
     }
 
     if (message.content == prefix + "nitro") {
-      message.reply('tu veux un nitro ? le voici ! : https://discord.gift/WNE2jpXv3q3J9dMs ');
+      message.reply(" DEPUIS QUAND JE PEUT EN DONNER ?! tien régale toi mon reuf ! : https://discord.gift/XDXqnFbfjyB9SdgG");
     }
 
 
