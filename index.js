@@ -51,10 +51,6 @@ const replies = [
       message.reply(message.author.displayAvatarURL());
     }
 
-    if (message.content == prefix + "nitro") {
-      message.reply(" DEPUIS QUAND JE PEUT EN DONNER ?! tien régale toi mon reuf ! : https://discord.gift/XDXqnFbfjyB9SdgG");
-    }
-
 
 
     //****MUSIQUE****//
