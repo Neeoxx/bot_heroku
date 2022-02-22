@@ -66,19 +66,7 @@ const replies = [
   }
 
 
-    if (message.content == prefix + "lvl") {
-      if (bdd["statut-level"] == true) {
-          bdd["statut-level"] = false
-          Savebdd()
-          return message.channel.send('Vous venez d\'arreter le système de level !');
-      } else {
-          bdd["statut-level"] = true;
-          Savebdd()
-          return message.channel.send('Vous venez d\'allumer le système de level !');
-      }
-  }
   
-  if (bdd["statut-level"] == true) {
       if (message.content == prefix + "level") {
           if (!bdd["coins-utilisateurs"][message.member.id]) return message.channel.send(`Vous n'avez pas encore posté de message !`);
           return message.channel.send(`Vous avez ${bdd["coins-utilisateurs"][message.member.id]} points !\nEt vous êtes au level n°${bdd["level-utilisateurs"][message.member.id]}`)
@@ -86,35 +74,34 @@ const replies = [
       if (!bdd["coins-utilisateurs"][message.member.id]) {
           bdd["coins-utilisateurs"][message.member.id] = Math.floor(Math.random() * (4 - 1) + 1);
           bdd["level-utilisateurs"][message.member.id] = 0;
-          Savebdd()
+          Savebdd();
       } else {
           let new_coins = bdd["coins-utilisateurs"][message.member.id] + Math.floor(Math.random() * (4 - 1) + 1);
           if (bdd["coins-utilisateurs"][message.member.id] < 100 && new_coins >= 100) {
               bdd["level-utilisateurs"][message.member.id] = 1;
               bdd["coins-utilisateurs"][message.member.id] = new_coins;
-              Savebdd()
+              Savebdd();
               return message.channel.send(`Bravo ${message.author} tu es passé niveau 1 !`);
           }
           if (bdd["coins-utilisateurs"][message.member.id] < 250 && new_coins >= 250) {
               bdd["level-utilisateurs"][message.member.id] = 2;
               bdd["coins-utilisateurs"][message.member.id] = new_coins;
-              Savebdd()
+              Savebdd();
               return message.channel.send(`Bravo ${message.author} tu es passé niveau 2 !`);
           }
           if (bdd["coins-utilisateurs"][message.member.id] < 500 && new_coins > 500) {
               bdd["level-utilisateurs"][message.member.id] = 3;
               bdd["coins-utilisateurs"][message.member.id] = new_coins;
-              Savebdd()
+              Savebdd();
               return message.channel.send(`Bravo ${message.author} tu es passé niveau 3 !`);
           }
           if (bdd["coins-utilisateurs"][message.member.id] < 1000 && new_coins > 1000) {
               bdd["level-utilisateurs"][message.member.id] = 4;
               bdd["coins-utilisateurs"][message.member.id] = new_coins;
-              Savebdd()
+              Savebdd();
               return message.channel.send(`Bravo ${message.author} tu es passé niveau 4 !`);
           }
       }
-  }
 
 
 //****BAN ET KICK*****//
