@@ -3,7 +3,12 @@ const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
 require('dotenv').config();
-const fetch = require("node-fetch");
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const dbdb = new FileSync("db.json");
+const db = low(dbdb);
+db.defaults({Infos_membres: []}).write();
+const fetch = require("node-fetch"); 
 const replies = [
 
     'je te kiff trooop !',
@@ -37,6 +42,22 @@ const replies = [
     Client.user.setStatus("online");
     Client.user.setActivity("Les amoureux", { type: "WATCHING" });
   });
+
+
+Client.on("message", async message => {
+  let msgauthorid = message.author.id
+
+
+  if(!db.get("Infos_membres").find({id: msgauthorid}).value()){
+      db.get("Infos_membres").push({id: msgauthorid, xp: 1, niveau: 1, xp_p_niveau: 50}).write()
+        console.log('ça marche'); 
+  }
+})
+
+
+
+
+
 
   Client.on("message", message => {
     if (message.author.bot) return;
