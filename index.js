@@ -136,6 +136,7 @@ if (message.content.startsWith('b!ban')) {
     }
   }
   
+})
 
   const embed = new Discord.MessageEmbed()
 
@@ -218,4 +219,4 @@ Client.once('ready', () => {
 });
 
 
-Client.login(process.env.BOTTOKEN);})
+Client.login(process.env.BOTTOKEN);
