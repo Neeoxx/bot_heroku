@@ -158,7 +158,7 @@ if(message.content.startsWith('b!help')){
 
 function Savebdd() {
   fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
-      if (err) message.channel.send("Une erreur est survenue")
+      if (err) message.channel.send("Une erreur est survenue");
   });
 }
 
