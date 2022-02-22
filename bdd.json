@@ -1,25 +1,13 @@
 
 {
-    "stats": [
-        "1",
-        "2",
-        "3",
-        "soleil"
-    ],
     "warn": {},
     "coins-utilisateurs": {
-
     },
     "level-utilisateurs": {
-
     },
     "statut-level": true,
     "836369955372531712": {
         "prefix": "b!",
         "test": "test"
-    },
-    "channel-events": "",
-    "participants-event-1k": [    ],
-    "message-event-1k": ""
-    
+    } 
 }
