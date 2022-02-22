@@ -3,7 +3,7 @@ const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
 require('dotenv').config();
-const bdd = require("bdd.json");
+const bdd = require("./bdd.json");
 const fetch = require("node-fetch"); 
 const replies = [
 
