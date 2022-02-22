@@ -156,11 +156,6 @@ if(message.content.startsWith('b!help')){
    message.channel.send(embed);
 }
 
-function Savebdd() {
-  fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
-      if (err) message.channel.send("Une erreur est survenue");
-  });
-}
 
 if(message.content.startsWith('b!lvl')) {
   if (bdd["statut-level"] == true) {
@@ -213,6 +208,13 @@ if (bdd["statut-level"] == true) {
   }
 }
 })
+
+
+function Savebdd() {
+  fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
+      if (err) message.channel.send("Une erreur est survenue");
+  });
+}
 
 //****LES GIFS****//
 Client.on('message', gotMessage);
