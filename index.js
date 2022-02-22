@@ -3,11 +3,7 @@ const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
 require('dotenv').config();
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const dbdb = new FileSync("db.json");
-const db = low(dbdb);
-db.defaults({Infos_membres: []}).write();
+const bdd = require("bdd.json");
 const fetch = require("node-fetch"); 
 const replies = [
 
@@ -42,22 +38,6 @@ const replies = [
     Client.user.setStatus("online");
     Client.user.setActivity("Les amoureux", { type: "WATCHING" });
   });
-
-
-Client.on("message", async message => {
-  let msgauthorid = message.author.id
-
-
-  if(!db.get("Infos_membres").find({id: msgauthorid}).value()){
-      db.get("Infos_membres").push({id: msgauthorid, xp: 1, niveau: 1, xp_p_niveau: 50}).write()
-        console.log('ça marche'); 
-  }
-})
-
-
-
-
-
 
   Client.on("message", message => {
     if (message.author.bot) return;
@@ -176,6 +156,55 @@ if(message.content.startsWith('b!help')){
    message.channel.send(embed);
 }
 
+if(message.content.startsWith('b!level')) {
+  if (bdd["statut-level"] == true) {
+      bdd["statut-level"] = false
+      Savebdd();
+      return message.channel.send('Vous venez d\'arreter le système de level !');
+  } else {
+      bdd["statut-level"] = true;
+      Savebdd();
+      return message.channel.send('Vous venez d\'alumer le système de level !');
+  }
+}
+
+if (bdd["statut-level"] == true) {
+  if (commande === 'level') {
+      if (!bdd["coins-utilisateurs"][message.member.id]) return message.channel.send(`Nous n'avez pas encore posté de message !`);
+      return message.channel.send(`Vous avez ${bdd["coins-utilisateurs"][message.member.id]} points !\nEt vous êtes au level n°${bdd["level-utilisateurs"][message.member.id]}`)
+  }
+  if (!bdd["coins-utilisateurs"][message.member.id]) {
+      bdd["coins-utilisateurs"][message.member.id] = Math.floor(Math.random() * (4 - 1) + 1);
+      bdd["level-utilisateurs"][message.member.id] = 0;
+      Savebdd();
+  } else {
+      let new_coins = bdd["coins-utilisateurs"][message.member.id] + Math.floor(Math.random() * (4 - 1) + 1);
+      if (bdd["coins-utilisateurs"][message.member.id] < 100 && new_coins >= 100) {
+          bdd["level-utilisateurs"][message.member.id] = 1;
+          bdd["coins-utilisateurs"][message.member.id] = new_coins;
+          Savebdd();
+          return message.channel.send(`Bravo ${message.author} tu es passé niveau 1 !`);
+      }
+      if (bdd["coins-utilisateurs"][message.member.id] < 250 && new_coins >= 250) {
+          bdd["level-utilisateurs"][message.member.id] = 2;
+          bdd["coins-utilisateurs"][message.member.id] = new_coins;
+          Savebdd();
+          return message.channel.send(`Bravo ${message.author} tu es passé niveau 2 !`);
+      }
+      if (bdd["coins-utilisateurs"][message.member.id] < 500 && new_coins > 500) {
+          bdd["level-utilisateurs"][message.member.id] = 3;
+          bdd["coins-utilisateurs"][message.member.id] = new_coins;
+          Savebdd();
+          return message.channel.send(`Bravo ${message.author} tu es passé niveau 3 !`);
+      }
+      if (bdd["coins-utilisateurs"][message.member.id] < 1000 && new_coins > 1000) {
+          bdd["level-utilisateurs"][message.member.id] = 4;
+          bdd["coins-utilisateurs"][message.member.id] = new_coins;
+          Savebdd();
+          return message.channel.send(`Bravo ${message.author} tu es passé niveau 4 !`);
+      }
+  }
+}
 })
 
 //****LES GIFS****//
