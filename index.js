@@ -169,7 +169,7 @@ if(message.content.startsWith('b!level')) {
 }
 
 if (bdd["statut-level"] == true) {
-  if (commande === 'level') {
+  if(message.content.startsWith('b!level')) {
       if (!bdd["coins-utilisateurs"][message.member.id]) return message.channel.send(`Nous n'avez pas encore posté de message !`);
       return message.channel.send(`Vous avez ${bdd["coins-utilisateurs"][message.member.id]} points !\nEt vous êtes au level n°${bdd["level-utilisateurs"][message.member.id]}`)
   }
