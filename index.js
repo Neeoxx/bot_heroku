@@ -3,7 +3,7 @@ const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
 require('dotenv').config();
-const bdd = require("bdd.json");
+const bdd = require("./bdd.json");
 const fetch = require("node-fetch"); 
 const replies = [
 
@@ -109,7 +109,7 @@ const replies = [
   }
 
   function Savebdd() {
-    fs.writeFile("bdd.json", JSON.stringify(bdd, null, 4), (err) => {
+    fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
         if (err) message.channel.send("Une erreur est survenue.");
     });
 }
