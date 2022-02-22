@@ -136,7 +136,7 @@ if (message.content.startsWith('b!ban')) {
     }
   }
   
-})
+
 
   const embed = new Discord.MessageEmbed()
 
@@ -155,6 +155,7 @@ if(message.content.startsWith('b!help')){
    message.channel.send(embed);
 }
 
+})
 
 //****LES GIFS****//
 Client.on('message', gotMessage);
