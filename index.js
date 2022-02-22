@@ -156,14 +156,14 @@ if(message.content.startsWith('b!help')){
    message.channel.send(embed);
 }
 
-if(message.content.startsWith('b!level')) {
+if(message.content.startsWith('b!lvl')) {
   if (bdd["statut-level"] == true) {
       bdd["statut-level"] = false
-      Savebdd();
+      Savebdd()
       return message.channel.send('Vous venez d\'arreter le système de level !');
   } else {
       bdd["statut-level"] = true;
-      Savebdd();
+      Savebdd()
       return message.channel.send('Vous venez d\'alumer le système de level !');
   }
 }
@@ -176,31 +176,32 @@ if (bdd["statut-level"] == true) {
   if (!bdd["coins-utilisateurs"][message.member.id]) {
       bdd["coins-utilisateurs"][message.member.id] = Math.floor(Math.random() * (4 - 1) + 1);
       bdd["level-utilisateurs"][message.member.id] = 0;
+      Savebdd()
       
   } else {
       let new_coins = bdd["coins-utilisateurs"][message.member.id] + Math.floor(Math.random() * (4 - 1) + 1);
       if (bdd["coins-utilisateurs"][message.member.id] < 100 && new_coins >= 100) {
           bdd["level-utilisateurs"][message.member.id] = 1;
           bdd["coins-utilisateurs"][message.member.id] = new_coins;
-          Savebdd();
+          Savebdd()
           return message.channel.send(`Bravo ${message.author} tu es passé niveau 1 !`);
       }
       if (bdd["coins-utilisateurs"][message.member.id] < 250 && new_coins >= 250) {
           bdd["level-utilisateurs"][message.member.id] = 2;
           bdd["coins-utilisateurs"][message.member.id] = new_coins;
-          Savebdd();
+          Savebdd()
           return message.channel.send(`Bravo ${message.author} tu es passé niveau 2 !`);
       }
       if (bdd["coins-utilisateurs"][message.member.id] < 500 && new_coins > 500) {
           bdd["level-utilisateurs"][message.member.id] = 3;
           bdd["coins-utilisateurs"][message.member.id] = new_coins;
-          Savebdd();
+          Savebdd()
           return message.channel.send(`Bravo ${message.author} tu es passé niveau 3 !`);
       }
       if (bdd["coins-utilisateurs"][message.member.id] < 1000 && new_coins > 1000) {
           bdd["level-utilisateurs"][message.member.id] = 4;
           bdd["coins-utilisateurs"][message.member.id] = new_coins;
-          Savebdd();
+          Savebdd()
           return message.channel.send(`Bravo ${message.author} tu es passé niveau 4 !`);
       }
   }
