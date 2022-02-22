@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
-const low = require('lowdb');
+import  low  from ('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const adapters = new FileSync('database.json');
 const db = low(adapters);
