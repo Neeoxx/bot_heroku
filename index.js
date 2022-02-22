@@ -58,6 +58,14 @@ const replies = [
 
 
     //****XP****//
+
+    function Savebdd() {
+      fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
+          if (err) message.channel.send("Une erreur est survenue.");
+      });
+  }
+
+
     if (message.content == prefix + "lvl") {
       if (bdd["statut-level"] == true) {
           bdd["statut-level"] = false
@@ -66,7 +74,7 @@ const replies = [
       } else {
           bdd["statut-level"] = true;
           Savebdd();
-          return message.channel.send('Vous venez d\'alumer le système de level !');
+          return message.channel.send('Vous venez d\'allumer le système de level !');
       }
   }
   
@@ -75,7 +83,7 @@ const replies = [
           if (!bdd["coins-utilisateurs"][message.member.id]) return message.channel.send(`Vous n'avez pas encore posté de message !`);
           return message.channel.send(`Vous avez ${bdd["coins-utilisateurs"][message.member.id]} points !\nEt vous êtes au level n°${bdd["level-utilisateurs"][message.member.id]}`)
       }
-      if (!bdd["coins-utilisateurs"][message.member.id]) {
+      if (bdd["coins-utilisateurs"][message.member.id]) {
           bdd["coins-utilisateurs"][message.member.id] = Math.floor(Math.random() * (4 - 1) + 1);
           bdd["level-utilisateurs"][message.member.id] = 0;
           Savebdd();
@@ -107,13 +115,6 @@ const replies = [
           }
       }
   }
-
-  function Savebdd() {
-    fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
-        if (err) message.channel.send("Une erreur est survenue.");
-    });
-}
-
 
 
 //****BAN ET KICK*****//
