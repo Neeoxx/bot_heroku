@@ -157,7 +157,7 @@ if(message.content.startsWith('b!help')){
 }
 
 
-if(message.content.startsWith('b!lvl')) {
+if (commande === 'lvl') {
   if (bdd["statut-level"] == true) {
       bdd["statut-level"] = false
       Savebdd();
@@ -170,7 +170,7 @@ if(message.content.startsWith('b!lvl')) {
 }
 
 if (bdd["statut-level"] == true) {
-  if(message.content.startsWith('b!level')) {
+  if (commande === 'level') {
       if (!bdd["coins-utilisateurs"][message.member.id]) return message.channel.send(`Nous n'avez pas encore posté de message !`);
       return message.channel.send(`Vous avez ${bdd["coins-utilisateurs"][message.member.id]} points !\nEt vous êtes au level n°${bdd["level-utilisateurs"][message.member.id]}`)
   }
@@ -178,7 +178,6 @@ if (bdd["statut-level"] == true) {
       bdd["coins-utilisateurs"][message.member.id] = Math.floor(Math.random() * (4 - 1) + 1);
       bdd["level-utilisateurs"][message.member.id] = 0;
       Savebdd();
-      
   } else {
       let new_coins = bdd["coins-utilisateurs"][message.member.id] + Math.floor(Math.random() * (4 - 1) + 1);
       if (bdd["coins-utilisateurs"][message.member.id] < 100 && new_coins >= 100) {
