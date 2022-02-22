@@ -156,6 +156,12 @@ if(message.content.startsWith('b!help')){
    message.channel.send(embed);
 }
 
+function Savebdd() {
+  fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
+      if (err) message.channel.send("Une erreur est survenue")
+  });
+}
+
 if(message.content.startsWith('b!lvl')) {
   if (bdd["statut-level"] == true) {
       bdd["statut-level"] = false
@@ -166,12 +172,6 @@ if(message.content.startsWith('b!lvl')) {
       Savebdd();
       return message.channel.send('Vous venez d\'alumer le système de level !');
   }
-}
-
-function Savebdd() {
-  fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
-      if (err) message.channel.send("Une erreur est survenue")
-  });
 }
 
 if (bdd["statut-level"] == true) {
