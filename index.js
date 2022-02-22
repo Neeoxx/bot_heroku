@@ -33,8 +33,6 @@ const replies = [
 
   ]
 
-  db.defaults({ histoires : [], xp: []}).write()
-
     Client.on("ready", () => {
     Client.user.setStatus("online");
     Client.user.setActivity("Les amoureux", { type: "WATCHING" });
