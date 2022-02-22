@@ -159,7 +159,7 @@ if(message.content.startsWith('b!help')){
 if(message.content.startsWith('b!level')) {
   if (bdd["statut-level"] == true) {
       bdd["statut-level"] = false
-      Savebdd("./bdd.json");
+      Savebdd();
       return message.channel.send('Vous venez d\'arreter le système de level !');
   } else {
       bdd["statut-level"] = true;
@@ -176,7 +176,7 @@ if (bdd["statut-level"] == true) {
   if (!bdd["coins-utilisateurs"][message.member.id]) {
       bdd["coins-utilisateurs"][message.member.id] = Math.floor(Math.random() * (4 - 1) + 1);
       bdd["level-utilisateurs"][message.member.id] = 0;
-      Savebdd();
+      
   } else {
       let new_coins = bdd["coins-utilisateurs"][message.member.id] + Math.floor(Math.random() * (4 - 1) + 1);
       if (bdd["coins-utilisateurs"][message.member.id] < 100 && new_coins >= 100) {
