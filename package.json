@@ -20,6 +20,7 @@
     "ffmepg": "0.0.2-security",
     "ffmpeg": "0.0.4",
     "fs": "0.0.1-security",
+    "lowdb": "^3.0.0",
     "math.js": "^1.1.46",
     "mathjs": "^9.3.2",
     "moment": "^2.29.1",
