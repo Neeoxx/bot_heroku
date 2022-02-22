@@ -159,7 +159,7 @@ if(message.content.startsWith('b!help')){
 if(message.content.startsWith('b!level')) {
   if (bdd["statut-level"] == true) {
       bdd["statut-level"] = false
-      Savebdd();
+      Savebdd("./bdd.json");
       return message.channel.send('Vous venez d\'arreter le système de level !');
   } else {
       bdd["statut-level"] = true;
