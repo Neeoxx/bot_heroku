@@ -2,10 +2,6 @@ const Discord = require('discord.js');
 const Client = new Discord.Client();
 const fs = require('fs');
 const prefix = 'b!';
-const low = from ('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const adapters = new FileSync('database.json');
-const db = low(adapters);
 require('dotenv').config();
 const fetch = require("node-fetch");
 const replies = [
@@ -45,36 +41,8 @@ const replies = [
   });
 
   Client.on("message", message => {
-
-  var msgauthor = message.author.id; 
-
-
     if (message.author.bot) return;
     if (message.channel.type == "dm") return;
-
-    if(!db.get("xp").find({user : msgauthor}).value()){
-        db.get("xp").push({user : msgauthor, xp: 1}).write();
-    }else{
-        var userxpdb = db.get("xp").filter({user : msgauthor}).find("xp").value();
-        console.log(userxpdb)
-        var userxp = Object.values(userxpdb)
-        console.log(userxp)
-        console.log(`Nombre d'xp: ${userxp[1]}`)
- 
-        db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
- 
-        if(message.content === prefix + "xp"){
-            var xp = db.get("xp").filter({user: msgauthor}).find('xp').value()
-            var xpfinal = Object.values(xp);
-            var xp_embed = new Discord.RichEmbed()
-                .setTitle(`Stat des XP de : ${message.author.username}`)
-                .setColor('#F4D03F')
-                .addField("XP", `${xpfinal[1]} xp`)
-                .setFooter("Enjoy :p")
-            message.channel.send({embed : xp_embed})
-        }
-    }
-})
 
     //b!ping
     if (message.content == prefix + "ping") {
@@ -169,6 +137,7 @@ if (message.content.startsWith('b!ban')) {
       message.reply(`j'ai unmute ${user.tag}`);
     }
   }
+  
 
   const embed = new Discord.MessageEmbed()
 
@@ -251,4 +220,4 @@ Client.once('ready', () => {
 });
 
 
-Client.login(process.env.BOTTOKEN);
+Client.login(process.env.BOTTOKEN);})
