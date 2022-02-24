@@ -257,6 +257,9 @@ Client.once('ready', () => {
         }else if (command ==='lewd'){
           Client.commands.get('lewd').execute(message, args, Discord);
         }
+      else if (command ==='roh'){
+        Client.commands.get('roh').execute(message, args, Discord);
+      }
         }) 
     });
 
