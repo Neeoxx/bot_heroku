@@ -9,7 +9,7 @@ module.exports = {
         ]
 
         personRoh = message.mentions.users.first()
-            if(personToh){
+            if(personRoh){
             let RohEmbed = new Discord.MessageEmbed()
             .setTitle(`Rooooooooooh ${personHugged.username} t'es chiant la vie`)
             .setImage(images[Math. floor(Math. random()*images. length)])
