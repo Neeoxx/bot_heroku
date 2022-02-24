@@ -73,7 +73,7 @@ const replies = [
       }
       if (!bdd["coins-utilisateurs"][message.member.id]) {
           bdd["coins-utilisateurs"][message.member.id] = Math.floor(Math.random() * (4 - 1) + 1);
-          bdd["level-utilisateurs"][message.member.id] = 0;
+          bdd["level-utilisateurs"][message.member.id]
           Savebdd();
       } else {
           let new_coins = bdd["coins-utilisateurs"][message.member.id] + Math.floor(Math.random() * (4 - 1) + 1);
