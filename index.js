@@ -256,9 +256,8 @@ Client.once('ready', () => {
           Client.commands.get('smile').execute(message, args, Discord);
         }else if (command ==='lewd'){
           Client.commands.get('lewd').execute(message, args, Discord);
-        }
-      else if (command ==='roh'){
-        Client.commands.get('roh').execute(message, args, Discord);
+       } else if (command ==='roh'){
+          Client.commands.get('roh').execute(message, args, Discord);
       }
         }) 
     });
