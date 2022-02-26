@@ -14,10 +14,8 @@ module.exports = {
             "https://c.tenor.com/3EgO4ozQzp4AAAAC/anime-raphtalia.gif",
             "https://c.tenor.com/UO-rToKtvIgAAAAC/pout-anime-pout.gif",
             "https://c.tenor.com/L2eobON0t84AAAAC/anime-pout.gif",
-
-
-
-
+            "https://c.tenor.com/QlbInJqU0jQAAAAC/pokemon-jigglypuff.gif",
+            "https://c.tenor.com/03VCLMyKfL4AAAAC/pout-anime-pout.gif",
 
         ]
 
