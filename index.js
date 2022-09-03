@@ -57,6 +57,21 @@ const replies = [
 
 
     //b!lovecalc
+
+    client.commands = new Collection();
+    client.aliases = new Collection();
+    client.categories = fs.readdirSync("./commands/");
+
+    config({
+    path: __dirname + "/.env"
+});
+
+      ["command"].forEach(handler => {
+    require(`./handlers/${handler}`)(client);
+});
+
+
+
     if (!message.content.startsWith(prefix)) return;
     if (!message.member) message.member = await message.guild.fetchMember(message);
 
@@ -68,8 +83,8 @@ const replies = [
     let command = client.commands.get(cmd);
     if (!command) command = client.commands.get(client.aliases.get(cmd));
 
-    if (commands) 
-        commands.run(client, message, args);
+    if (command) 
+        command.run(client, message, args);
 
 
 
