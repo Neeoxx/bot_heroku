@@ -1,13 +1,11 @@
 const { RichEmbed } = require("discord.js");
-const { getMember } = require("../functions.js");
+// const { getMember } = require("../functions.js");
 
 module.exports = {
 
     name: "lovecalc",
     description: "Calculates the love affinity you have for another person.",
     async execute(message, args, Discord){
-
-        let person = getMember(message, args[0]);
 
         if (!person || message.author.id === person.id) {
             person = message.guild.members
