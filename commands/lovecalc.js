@@ -27,6 +27,15 @@ module.exports = {
             message.channel.send(loveEmbed);
         }
 
+        if(personLoved == "413799676039397376"){
+            let loveEmbed = new Discord.MessageEmbed()
+            .setTitle(` CALCUL'AMOUR :heart:`)
+            .setColor("#ffb6c1")
+            .setImage("https://c.tenor.com/dQdPx3fJBSsAAAAC/love-forever-infinity-heart.gif")
+            .addField(`☁ Pas besoin de calcul ! Tu aime **${message.member.displayName}** à l'INFINI ထ♾️`);
+            message.channel.send(loveEmbed);
+        }
+
     }
 
 }
