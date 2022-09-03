@@ -2,7 +2,7 @@ module.exports = {
     getMember: function(message, toFind = '') {
         toFind = toFind.toLowerCase();
 
-        let target = message.guild.members.get(toFind);
+        let target = message.guild.members.getMember(toFind);
         
         if (!target && message.mentions.members)
             target = message.mentions.members.first();
@@ -21,7 +21,7 @@ module.exports = {
     },
 
     formatDate: function(date) {
-        return new Intl.DateTimeFormat('en-US').format(date)
+        return new Intl.DateTimeFormat('en-FR').format(date)
     },
 
     promptMessage: async function (message, author, time, validReactions) {
