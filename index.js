@@ -5,11 +5,6 @@ const prefix = 'b!';
 require('dotenv').config();
 const bdd = require("./bdd.json");
 const fetch = require("node-fetch"); 
-
-const client = new Client({
-  disableEveryone: true
-});
-
 const replies = [
 
     'je te kiff trooop !',
@@ -62,7 +57,10 @@ const replies = [
 
 
     //b!lovecalc
-
+    const client = new Client({
+      disableEveryone: true
+    });
+    
     client.commands = new Collection();
     client.aliases = new Collection();
     client.categories = fs.readdirSync("./commands/");
