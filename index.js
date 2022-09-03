@@ -259,7 +259,7 @@ Client.once('ready', () => {
        } else if (command ==='roh'){
           Client.commands.get('roh').execute(message, args, Discord);
       } else if (command ==='lovecalc'){
-        Client.commands.get('lovecalc').execute(client, message, args);
+        Client.commands.get('lovecalc').execute(message, args, Discord);
       }
         }) 
     });

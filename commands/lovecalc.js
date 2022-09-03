@@ -2,12 +2,12 @@ const { RichEmbed } = require("discord.js");
 const { getMember } = require("../functions.js");
 
 module.exports = {
-    name: "love",
+    name: "lovecalc",
     aliases: ["affinity"],
     category: "fun",
     description: "Calculates the love affinity you have for another person.",
     usage: "[mention | id | username]",
-    async execute(client, message, args) {
+    async execute(message, args, Discord) {
         // Get a member from mention, id, or username
         let person = getMember(message, args[0]);
 
