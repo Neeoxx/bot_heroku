@@ -3,11 +3,10 @@ const { getMember } = require("../functions.js");
 
 module.exports = {
     name: "lovecalc",
-    aliases: ["affinity"],
     description: "Calculates the love affinity you have for another person.",
     usage: "[mention | id | username]",
-    async execute(client, message, args){
-        
+    async execute(Discord, message, args){
+
         // Get a member from mention, id, or username
         let person = getMember(message, args[0]);
 
