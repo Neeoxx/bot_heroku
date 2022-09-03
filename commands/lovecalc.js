@@ -13,7 +13,7 @@ module.exports = {
 
         const love = Math.random() * 100;
         const loveIndex = Math.floor(love / 10);
-        const loveLevel = "💖".repeat(loveIndex) + "💔".repeat(10 - loveIndex);
+        const loveLevel = "❤️".repeat(loveIndex) + "🖤".repeat(10 - loveIndex);
 
 
         personLoved = message.mentions.users.first()
@@ -22,7 +22,7 @@ module.exports = {
             .setTitle(` CALCUL'AMOUR :heart:`)
             .setColor("#ffb6c1")
             .setImage(images[Math. floor(Math. random()*images. length)])
-            .addField(`☁ **${message.mentions.displayName}** aime **${message.member.displayName}** à :`,
+            .addField(`☁ **${message.mentions.users.displayName}** aime **${message.member.displayName}** à :`,
             `💟 ${Math.floor(love)}%\n\n${loveLevel} !!`);
             message.channel.send(loveEmbed);
         }
