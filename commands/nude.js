@@ -5,7 +5,7 @@ module.exports = {
     description: "tqt",
      async execute(message, args, Discord){
 
-        const subReddits = ["Nude_Selfie", "Nude", "NudesFromGirls", "nsfw", "nsfw_gifs"];
+        const subReddits = ["NudesFromGirls", "nsfw",];
         
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
         const img = await randomPuppy(random);
