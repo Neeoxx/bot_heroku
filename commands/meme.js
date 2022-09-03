@@ -1,11 +1,9 @@
-const { messageEmbed } = require("discord.js");
 const randomPuppy = require("random-puppy");
 
 module.exports = {
     name: "meme",
-    category: "fun",
     description: "Sends an epic meme",
-    run: async (client, message, args) => {
+     async execute(client, message, args){
         // In this array, 
         // you can put the subreddits you want to grab memes from
         const subReddits = ["dankmeme", "meme", "me_irl"];
@@ -14,12 +12,14 @@ module.exports = {
 
         // Get a random image from the subreddit page
         const img = await randomPuppy(random);
-        const embed = new messageEmbed()
+
+        let memeEmbed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setImage(img)
             .setTitle(`From /r/${random}`)
             .setURL(`https://reddit.com/r/${random}`);
 
-        message.channel.send(embed);
+        message.channel.send(memeEmbed);
+
     }
 }
