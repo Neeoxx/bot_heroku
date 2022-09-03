@@ -15,7 +15,7 @@ module.exports = {
         personBiten = message.mentions.users.first()
             if(personBiten){
             let mordEmbed = new Discord.MessageEmbed()
-            .setTitle(` tu mords ${personBiten.username} :drool: `)
+            .setTitle(`${personBiten.username} :drool: `)
             .setImage(images[Math. floor(Math. random()*images. length)])
             .setTimestamp()
             
