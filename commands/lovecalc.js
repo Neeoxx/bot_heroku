@@ -17,6 +17,8 @@ module.exports = {
 
 
         personLoved = message.mentions.users.first()
+        personLoveed = message.mentions.users.first()
+
             if(personLoved){
             let loveEmbed = new Discord.MessageEmbed()
             .setTitle(` CALCUL'AMOUR :heart:`)
@@ -27,7 +29,7 @@ module.exports = {
             message.channel.send(loveEmbed);
          } 
         
-        else if(personLoveed == "413799676039397376")
+            if(personLoveed == "413799676039397376")
         {
             let loveeEmbed = new Discord.MessageEmbed()
             .setTitle(` CALCUL'AMOUR :heart:`)
