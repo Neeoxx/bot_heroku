@@ -1,4 +1,4 @@
-// const { RichEmbed } = require("discord.js");
+const { RichEmbed } = require("discord.js");
 // const { getMember } = require("../../functions.js");
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
     category: "fun",
     description: "Calculates the love affinity you have for another person.",
     usage: "[mention | id | username]",
-    run: async (client, message, args) => {
+    run: async (Discord, message, args) => {
         // Get a member from mention, id, or username
         let person = getMember(message, args[0]);
 
