@@ -5,7 +5,7 @@ module.exports = {
     description: "envoie un meme drole ou claqué au sol sa dépend",
      async execute(message, args, Discord){
 
-        const subReddits = ["meme", "MemeFrancais", "Animemes", "ComedyCemetery"];
+        const subReddits = ["meme", "MemeFrancais", "dankmeme"];
         
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
         const img = await randomPuppy(random);
