@@ -26,7 +26,7 @@ module.exports = {
             .setTitle(` CALCUL'AMOUR :heart:`)
             .setColor("#ffb6c1")
             .setImage(images[Math. floor(Math. random()*images. length)])
-            .addField(`☁ **${message.author}** aime **${message.member.displayName}** à 💟 ${Math.floor(love)}%\n\n${loveLevel} !!`);
+            .addField(`☁ **${message.author.displayName}** aime **${message.member.displayName}** à 💟 ${Math.floor(love)}%\n\n${loveLevel} !!`);
             message.channel.send(loveEmbed);
         }
 
