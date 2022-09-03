@@ -23,7 +23,7 @@ module.exports = {
             .setColor("#ffb6c1")
             .setImage(images[Math. floor(Math. random()*images. length)])
             .addField(`☁ **${message.mentions.users.displayName}** aime **${message.member.displayName}** à :`,
-            `💟 ${Math.floor(love)}%\n\n${loveLevel} !!`);
+            `💟 ${Math.floor(love)}%\n\n${loveLevel}`);
             message.channel.send(loveEmbed);
         }
 
