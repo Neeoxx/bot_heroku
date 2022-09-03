@@ -7,7 +7,7 @@ module.exports = {
     category: "fun",
     description: "Calculates the love affinity you have for another person.",
     usage: "[mention | id | username]",
-    run: async (client, message, args) => {
+    async execute(client, message, args) {
         // Get a member from mention, id, or username
         let person = getMember(message, args[0]);
 
