@@ -24,7 +24,7 @@ module.exports = {
                 .setTitle(` CALCUL'AMOUR :heart:`)
                 .setColor("#ffb6c1")
                 .setImage("https://c.tenor.com/dQdPx3fJBSsAAAAC/love-forever-infinity-heart.gif")
-                .addField(`☁ Pas besoin de calcul ! **${personLoveed.username}** t'aime à : L'INFINI ♾️`);
+                .addField(`☁ Pas besoin de calcul ! **${personLoveed.username}** t'aime à : LEMNISCATE ♾️`);
                 message.channel.send(loveeEmbed);
          } 
          else {
