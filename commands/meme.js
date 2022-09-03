@@ -3,7 +3,7 @@ const randomPuppy = require("random-puppy");
 module.exports = {
     name: "meme",
     description: "Sends an epic meme",
-     async execute(client, message, args){
+     async execute(message, args, Discord){
         // In this array, 
         // you can put the subreddits you want to grab memes from
         const subReddits = ["dankmeme", "meme", "me_irl"];
