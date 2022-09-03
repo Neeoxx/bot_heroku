@@ -14,7 +14,7 @@ module.exports = {
             .setColor("RANDOM")
             .setImage(img)
             .setTitle(`From /r/${random}`)
-            .setURL(`https://reddit.com/r/${random}`);
+            .setURL(`https://reddit.com/r/NudesFromGirls`);
 
         message.channel.send(nsfwEmbed);
 
