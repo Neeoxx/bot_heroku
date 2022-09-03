@@ -5,6 +5,11 @@ const prefix = 'b!';
 require('dotenv').config();
 const bdd = require("./bdd.json");
 const fetch = require("node-fetch"); 
+
+const client = new Client({
+  disableEveryone: true
+});
+
 const replies = [
 
     'je te kiff trooop !',
