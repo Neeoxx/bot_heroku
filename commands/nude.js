@@ -5,7 +5,7 @@ module.exports = {
     description: "tqt",
      async execute(message, args, Discord){
 
-        const subReddits = ["NudesFromGirls", "nsfw",];
+        const subReddits = ["NudesFromGirls"];
         
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
         const img = await randomPuppy(random);
@@ -13,7 +13,7 @@ module.exports = {
         let nsfwEmbed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setImage(img)
-            .setTitle(`From /r/${random}`)
+            .setTitle(`From /r/NudesFromGirls`)
             .setURL(`https://reddit.com/r/NudesFromGirls`);
 
         message.channel.send(nsfwEmbed);
