@@ -260,6 +260,8 @@ Client.once('ready', () => {
         Client.commands.get('lovecalc').execute(message, args, Discord);
       } else if (command ==='meme'){
         Client.commands.get('meme').execute(message, args, Discord);
+      } else if (command ==='nude'){
+        Client.commands.get('nude').execute(message, args, Discord);
       }
         }) 
     });
