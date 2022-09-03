@@ -11,7 +11,7 @@ module.exports = {
             if(personLoved){
             let loveEmbed = new Discord.MessageEmbed()
             .setColor("#ffb6c1")
-            .addField(`☁ **${person.displayName}** loves **${message.member.displayName}** this much:`,
+            .addField(`☁ **${personLoved.displayName}** loves **${message.member.displayName}** this much:`,
             `💟 ${Math.floor(love)}%\n\n${loveLevel}`);
             message.channel.send(loveEmbed);
         }
