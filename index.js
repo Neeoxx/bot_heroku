@@ -256,17 +256,11 @@ Client.once('ready', () => {
           Client.commands.get('lewd').execute(message, args, Discord);
        } else if (command ==='roh'){
           Client.commands.get('roh').execute(message, args, Discord);
+      } else if (command ==='lovecalc'){
+        Client.commands.get('lovecalc').execute(message, args, Discord);
       }
         }) 
     });
-
-
-
-
-
-
-
-
 
 
 
